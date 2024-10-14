@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>URLスキームテスト</title>
+</head>
+<body>
+    <h1>URLスキームテスト</h1>
+    <p><a href="myapp://open">アプリを開く</a></p>
+    
+    <script>
+    function openApp() {
+        window.location.href = 'myapp://open';
+        
+        // フォールバック処理
+        setTimeout(function() {
+            window.location.href = 'https://apps.apple.com/jp/app/yourappid';
+        }, 1000);
+    }
+    </script>
+    
+    <button onclick="openApp()">JavaScriptでアプリを開く</button>
+</body>
+</html>
